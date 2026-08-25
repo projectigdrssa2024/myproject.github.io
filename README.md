@@ -1,2 +1,2 @@
 # myproject.github.io
-test
+Training file for myProject
