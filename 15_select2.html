@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Medicio Bootstrap Template - Index</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="assets/img/favicon.png" rel="icon">
+    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Vendor CSS Files -->
+    <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+    <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets/css/style.css" rel="stylesheet">
+    <!-- javascript -->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.js"></script>
+
+    <!-- select2 -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" /> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script> -->
+    <link href="assets/css/select2.min.css" rel="stylesheet" />
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/select2.js"></script>
+
+
+    <!-- =======================================================
+    * Template Name: Medicio - v2.1.0
+    * Template URL: https://bootstrapmade.com/medicio-free-bootstrap-theme/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+
+    latihan membuat select2 pada form select
+     file terkait 
+     1.select2.js
+     2.update_file.php
+    ======================================================== -->
+</head>
+
+<body>
+    <h1>Latihan membuat drop down dengan Select2 jquery</h1>
+    <label for="state">Perawat:</label>
+    <div class="form-group">
+    </div>
+    <div class="row">
+        <div class="col">
+          
+            
+            <form class="row g-3 harus-validasi" novalidate>
+                
+                <div class="col-md-4">
+                  <label for="nama_depan" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="nama_depan"  required>
+                  <div class="invalid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="nama_belakang" class="form-label">Last name</label>
+                  <input type="text" class="form-control" id="nama_belakang" aria-describedby="inputGroupPrepend"required>
+                  <div class="invalid-feedback">
+                    Looks good!
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="username" class="form-label">Username</label>
+                  <div class="input-group has-validation">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                    <input type="text" class="form-control" id="username" aria-describedby="inputGroupPrepend" required>
+                    <div class="invalid-feedback">
+                      Please choose a username.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="validationCustom03" class="form-label">City</label>
+                  <input type="text" class="form-control" id="validationCustom03" required>
+                  <div class="invalid-feedback">
+                    Please provide a valid city.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="validationCustom04" class="form-label">State</label>
+                  <select class="form-select" id="validationCustom04" required>
+                    <option selected disabled value="">Choose...</option>
+                    <option value="malang">Malang</option>
+                  </select>
+                  <div class="invalid-feedback">
+                    Please select a valid state.
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <label for="alamat" class="form-label">alamat</label>
+                  <input type="text" class="form-control" id="alamat" required>
+                  <div class="invalid-feedback">
+            alamat
+                  </div>
+                </div>
+                <div class="col-md-3">
+                    <label for="zip" class="form-label">ID</label>
+                    <input type="text" class="form-control" id="zip" required>
+                    <div class="invalid-feedback">
+                      Zip must be filled
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <label for="kodepos" class="form-label">NIP</label>
+                    <input type="text" class="form-control" id="kodepos" required>
+                    <div class="invalid-feedback">
+                      kode harus di isi
+                    </div>
+                  </div>
+                <div class="col-md-4">
+                    <label for="nama" class="form-label" >Perawat PPA</label>
+                    <select name="nama" id="nama" class="js-example-templating" style="width: 500px" onchange="nameChange(this)" required>
+                        <!-- <option selected disabled value=""></option> -->
+                    </select>
+                    <div class="invalid-feedback">
+                        Harus di isi
+                    </div>
+                </div>
+<script>
+  $(document).ready(function() {
+    $('#nama').select2({
+        ajax: {
+            url: 'json_db_tindakan.php',
+            type: 'GET',
+            dataType: 'json',
+            delay: 250,
+            data: function(params) {
+                return {
+                    q: params.term // search term
+                };
+            },
+            processResults: function(data) {
+                return {
+                    results: data
+                };
+            },
+            cache: true
+        },
+        placeholder: 'Pilih jenis tindakan',
+        minimumInputLength: 2
+    });
+  });
+
+  function nameChange(selectElement) {
+
+      var getID = $(selectElement).select2('data'); // Get the selected ID and text using select2('data')
+      document.getElementById('zip').value = getID[0]['id']; // That's the selected ID :)
+      document.getElementById('nama_depan').value = getID[0]['text']; // That's the selected ID :)
+      document.getElementById('kodepos').value = getID[0]['category']; // That's the selected ID :)
+      document.getElementById('alamat').value = getID[0]['alamat']; // That's the selected ID :)
+      document.getElementById('username').value = getID[0]['kode']; // That's the selected ID :)
+
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                      Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                      You must agree before submitting.
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button class="btn btn-primary" type="submit">Submit form</button>
+                </div>
+              </form>
+        </div>
+    </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict'
+
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.harus-validasi')
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+
+</body>
+
+</html>
